@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Resume Screener | Premium Candidate Ranking</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="glass-bg"></div>
+    
+    <nav>
+        <div class="logo">
+            <i class="fas fa-brain"></i>
+            <span>HR<span class="highlight">AI</span></span>
+        </div>
+        <div class="nav-links">
+            <a href="#" class="active">Dashboard</a>
+            <a href="https://github.com/upmanyususten-bot/HR_Automated_System" target="_blank">Github</a>
+        </div>
+    </nav>
+
+    <main>
+        <header>
+            <h1>AI Resume <span class="gradient-text">Screening System</span></h1>
+            <p>Upload resumes and rank candidates using advanced semantic analysis.</p>
+        </header>
+
+        <section class="upload-container">
+            <div class="card job-card">
+                <h3><i class="fas fa-briefcase"></i> Job Description</h3>
+                <textarea id="jobDescription" placeholder="Paste the job title, requirements, and required skills here..."></textarea>
+            </div>
+
+            <div class="card upload-card" id="dropZone">
+                <h3><i class="fas fa-cloud-upload-alt"></i> Upload Resumes</h3>
+                <p>Drag & drop or click to select PDF/DOCX files</p>
+                <input type="file" id="fileInput" multiple accept=".pdf,.docx" hidden>
+                <div id="fileList" class="file-list"></div>
+                <button class="btn-secondary" onclick="document.getElementById('fileInput').click()">Select Files</button>
+            </div>
+        </section>
+
+        <div class="action-bar">
+            <button id="analyzeBtn" class="btn-primary">
+                <span class="btn-text">🔍 Analyze Candidates</span>
+                <span class="loader hidden"></span>
+            </button>
+        </div>
+
+        <section id="resultsSection" class="results-container hidden">
+            <div class="results-header">
+                <h2>🏆 Candidate Rankings</h2>
+                <div id="statsBar"></div>
+            </div>
+            <div id="resultsList" class="results-grid"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 HR-AI Automated System. Premium Experience.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
